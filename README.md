@@ -5,7 +5,7 @@ I’m currently learning Agentic AI and deepening my understanding of modern AI 
 I enjoy solving problems through code and building scalable solutions.
 
 
-## 💡 My Personal Quote
+## 💡 My Personal Philosophy
 > "The future belongs to those who can master the art of conversation with machines." - *Muhammad Siddiq*
 
 
