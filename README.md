@@ -1,5 +1,8 @@
 # 💫 About Me:
-I'm currently working on a personal learning projects<br>I'm looking for role as a gen ai/ backend developer<br>I'm currently learning Agentic AI and exploring new things about AI<br>I love to code
+I’m actively building personal learning projects with a strong focus on practical, production-ready systems.
+I’m seeking a role as a Generative AI or Backend Developer.
+I’m currently learning Agentic AI and deepening my understanding of modern AI systems.
+I enjoy solving problems through code and building scalable solutions.
 
 
 ## 💡 My Personal Quote
