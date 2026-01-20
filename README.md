@@ -1,5 +1,8 @@
 # 💫 About Me:
-I’m actively building personal learning projects with a strong focus on practical, production-ready systems.\n I’m seeking a role as a Generative AI or Backend Developer.\n I’m currently learning Agentic AI and deepening my understanding of modern AI systems.\n I enjoy solving problems through code and building scalable solutions.
+I’m actively building personal learning projects with a strong focus on practical, production-ready systems.<br>
+I’m seeking a role as a Generative AI or Backend Developer.<br>
+I’m currently learning Agentic AI and deepening my understanding of modern AI systems.<br>
+I enjoy solving problems through code and building scalable solutions.
 
 
 ## 💡 My Personal Quote
