@@ -21,5 +21,3 @@ I enjoy solving problems through code and building scalable solutions.
 ![](https://github-readme-stats.vercel.app/api?username=genaiwithms&theme=dark&hide_border=false&include_all_commits=false&count_private=true)<br/>
 ![](https://nirzak-streak-stats.vercel.app/?user=genaiwithms&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=genaiwithms&theme=dark&hide_border=false&include_all_commits=false&count_private=true&layout=compact)
-
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
