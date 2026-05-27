@@ -18,6 +18,6 @@
 
 
 # 📊 GitHub Stats:
-![](https://github-readme-stats-theta-rust-54.vercel.app/api?username=genaiwithms&theme=dark&hide_border=false&include_all_commits=true&count_private=true&v=1779846793)<br/>
-![](https://github-readme-streak-six.vercel.app/?user=genaiwithms&theme=dark&hide_border=false&v=1779846793)<br/>
-![](https://github-readme-stats-theta-rust-54.vercel.app/api/top-langs/?username=genaiwithms&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact&v=1779846793)
+![](https://github-readme-stats-theta-rust-54.vercel.app/api?username=genaiwithms&theme=dark&hide_border=false&include_all_commits=true&count_private=true&v=1779863017)<br/>
+![](https://github-readme-streak-six.vercel.app/?user=genaiwithms&theme=dark&hide_border=false&v=1779863017)<br/>
+![](https://github-readme-stats-theta-rust-54.vercel.app/api/top-langs/?username=genaiwithms&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact&v=1779863017)
