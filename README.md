@@ -1,9 +1,9 @@
 # 💫 About Me:
-• I’m actively building personal learning projects with a strong focus on practical, production-ready systems.<br>
-• I’m seeking a role as a Generative AI or Backend Developer.<br>
-• I’m currently learning Agentic AI and deepening my understanding of modern AI systems.<br>
-• I enjoy solving problems through code and building scalable solutions.
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/genaiwithms/genaiwithms/master/assets/dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/genaiwithms/genaiwithms/master/assets/light.svg">
+  <img src="https://raw.githubusercontent.com/genaiwithms/genaiwithms/master/assets/dark.svg" alt="Muhammad Siddiq banner">
+</picture>
 
 ## 💡 My Personal Philosophy
 > "The future belongs to those who can master the art of conversation with machines." - *Muhammad Siddiq*
