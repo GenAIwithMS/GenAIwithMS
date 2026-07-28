@@ -87,7 +87,7 @@
   </circle>
   <text x="428" y="240" class="mono val" font-size="13">ONLINE</text>
 
-  <text x="330" y="265" class="mono dim" font-size="13">$ <tspan fill="#c9d1d9">building the future, one commit at a time_</tspan><tspan fill="#5ee6b0">▍</tspan>
+  <text x="330" y="265" class="mono dim" font-size="13">$ <tspan fill="#c9d1d9">building the future needs consistency_</tspan><tspan fill="#5ee6b0">▍</tspan>
     <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" dur="1s" repeatCount="indefinite"/>
   </text>
 </svg>
