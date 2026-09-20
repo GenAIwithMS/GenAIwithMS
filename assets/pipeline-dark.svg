@@ -1,4 +1,4 @@
-<svg width="900" height="270" viewBox="0 0 900 270" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .mono { font-family: 'Courier New', Consolas, monospace; }
@@ -6,7 +6,8 @@
       .val { fill: #c9d1d9; }
       .dim { fill: #6e7681; }
     </style>
-    <path id="flow" d="M 30,100.0 H 870" fill="none"/>
+    <path id="runFlow" d="M 30,112.0 H 870" fill="none"/>
+    <path id="gateFlow" d="M 30,216.0 H 870" fill="none"/>
     <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#5ee6b0"/>
       <stop offset="100%" stop-color="#79c0ff"/>
@@ -14,96 +15,125 @@
   </defs>
 
   <!-- window frame -->
-  <rect x="1" y="1" width="898" height="268" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="1" y="1" width="898" height="298" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
   <rect x="1" y="1" width="898" height="40" rx="14" fill="#161b22"/>
   <rect x="1" y="27" width="898" height="14" fill="#161b22"/>
   <circle cx="26" cy="20" r="6" fill="#ff5f56"/>
   <circle cx="46" cy="20" r="6" fill="#ffbd2e"/>
   <circle cx="66" cy="20" r="6" fill="#27c93f"/>
-  <text x="450.0" y="25" text-anchor="middle" class="mono dim" font-size="13">muhammad@lahore:~$ python agent_pipeline.py</text>
+  <text x="450.0" y="25" text-anchor="middle" class="mono dim" font-size="13">muhammad@lahore:~$ python -m evals.run_suite</text>
   <circle cx="806" cy="20" r="4" fill="#3fb950">
     <animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/>
   </circle>
   <text x="816" y="24" class="mono" font-size="12" fill="#3fb950" font-weight="700">RUNNING</text>
 
-  <!-- flow line -->
-  <line x1="30" y1="100.0" x2="870" y2="100.0" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4 5">
+  <!-- runtime: one chat message -->
+  <text x="30" y="70" class="mono dim" font-size="12"># runtime · rag_pipeline.invoke()</text>
+  <line x1="30" y1="112.0" x2="870" y2="112.0" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4 5">
     <animate attributeName="stroke-dashoffset" values="18;0" dur="1.2s" repeatCount="indefinite"/>
   </line>
-
-  <!-- nodes -->
-  <!-- packets travelling through the pipeline -->
   <circle r="4" fill="#5ee6b0">
-    <animateMotion dur="7s" repeatCount="indefinite"><mpath href="#flow"/></animateMotion>
+    <animateMotion dur="8s" begin="0s" repeatCount="indefinite"><mpath href="#runFlow"/></animateMotion>
   </circle>
-  <rect x="30" y="72" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <rect x="30" y="72" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
-    <animate attributeName="opacity" values="0.0;0.0;1.0;0.0;0.0" keyTimes="0.000;0.001;0.071;0.141;1.000" dur="7s" repeatCount="indefinite"/>
+  <rect x="30" y="84" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="30" y="84" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.011;0.071;0.131;1" dur="8s" begin="0s" repeatCount="indefinite"/>
   </rect>
-  <text x="90.0" y="97" text-anchor="middle" class="mono label" font-size="13">QUERY</text>
-  <text x="90.0" y="115" text-anchor="middle" class="mono dim" font-size="11">user intent</text>
-  <path d="M 158.0,95.0 L 166.0,100.0 L 158.0,105.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
-  <rect x="174" y="72" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <rect x="174" y="72" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
-    <animate attributeName="opacity" values="0.0;0.0;1.0;0.0;0.0" keyTimes="0.000;0.173;0.243;0.313;1.000" dur="7s" repeatCount="indefinite"/>
+  <text x="90.0" y="109.0" text-anchor="middle" class="mono label" font-size="13">WEBHOOK</text>
+  <text x="90.0" y="127.0" text-anchor="middle" class="mono dim" font-size="11">HMAC verified</text>
+  <path d="M 158.0,107.0 L 166.0,112.0 L 158.0,117.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="174" y="84" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="174" y="84" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.183;0.243;0.303;1" dur="8s" begin="0s" repeatCount="indefinite"/>
   </rect>
-  <text x="234.0" y="97" text-anchor="middle" class="mono label" font-size="13">RETRIEVE</text>
-  <text x="234.0" y="115" text-anchor="middle" class="mono dim" font-size="11">RAG context</text>
-  <path d="M 302.0,95.0 L 310.0,100.0 L 302.0,105.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
-  <rect x="318" y="72" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <rect x="318" y="72" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
-    <animate attributeName="opacity" values="0.0;0.0;1.0;0.0;0.0" keyTimes="0.000;0.344;0.414;0.484;1.000" dur="7s" repeatCount="indefinite"/>
+  <text x="234.0" y="109.0" text-anchor="middle" class="mono label" font-size="13">CONDENSE</text>
+  <text x="234.0" y="127.0" text-anchor="middle" class="mono dim" font-size="11">memory · rewrite</text>
+  <path d="M 302.0,107.0 L 310.0,112.0 L 302.0,117.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="318" y="84" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="318" y="84" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.354;0.414;0.474;1" dur="8s" begin="0s" repeatCount="indefinite"/>
   </rect>
-  <text x="378.0" y="97" text-anchor="middle" class="mono label" font-size="13">AGENT</text>
-  <text x="378.0" y="115" text-anchor="middle" class="mono dim" font-size="11">LangGraph</text>
-  <path d="M 446.0,95.0 L 454.0,100.0 L 446.0,105.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
-  <rect x="462" y="72" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <rect x="462" y="72" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
-    <animate attributeName="opacity" values="0.0;0.0;1.0;0.0;0.0" keyTimes="0.000;0.516;0.586;0.656;1.000" dur="7s" repeatCount="indefinite"/>
+  <text x="378.0" y="109.0" text-anchor="middle" class="mono label" font-size="13">RETRIEVE</text>
+  <text x="378.0" y="127.0" text-anchor="middle" class="mono dim" font-size="11">vectors · top 10</text>
+  <path d="M 446.0,107.0 L 454.0,112.0 L 446.0,117.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="462" y="84" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="462" y="84" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.526;0.586;0.646;1" dur="8s" begin="0s" repeatCount="indefinite"/>
   </rect>
-  <text x="522.0" y="97" text-anchor="middle" class="mono label" font-size="13">EVALUATE</text>
-  <text x="522.0" y="115" text-anchor="middle" class="mono dim" font-size="11">DeepEval</text>
-  <path d="M 590.0,95.0 L 598.0,100.0 L 590.0,105.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
-  <rect x="606" y="72" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <rect x="606" y="72" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
-    <animate attributeName="opacity" values="0.0;0.0;1.0;0.0;0.0" keyTimes="0.000;0.687;0.757;0.827;1.000" dur="7s" repeatCount="indefinite"/>
+  <text x="522.0" y="109.0" text-anchor="middle" class="mono label" font-size="13">RERANK</text>
+  <text x="522.0" y="127.0" text-anchor="middle" class="mono dim" font-size="11">cross-enc · top 3</text>
+  <path d="M 590.0,107.0 L 598.0,112.0 L 590.0,117.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="606" y="84" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="606" y="84" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.697;0.757;0.817;1" dur="8s" begin="0s" repeatCount="indefinite"/>
   </rect>
-  <text x="666.0" y="97" text-anchor="middle" class="mono label" font-size="13">GUARD</text>
-  <text x="666.0" y="115" text-anchor="middle" class="mono dim" font-size="11">security</text>
-  <path d="M 734.0,95.0 L 742.0,100.0 L 734.0,105.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
-  <rect x="750" y="72" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <rect x="750" y="72" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
-    <animate attributeName="opacity" values="0.0;0.0;1.0;0.0;0.0" keyTimes="0.000;0.859;0.929;0.999;1.000" dur="7s" repeatCount="indefinite"/>
+  <text x="666.0" y="109.0" text-anchor="middle" class="mono label" font-size="13">GENERATE</text>
+  <text x="666.0" y="127.0" text-anchor="middle" class="mono dim" font-size="11">grounded prompt</text>
+  <path d="M 734.0,107.0 L 742.0,112.0 L 734.0,117.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="750" y="84" width="120" height="56" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="750" y="84" width="120" height="56" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.869;0.929;0.989;1" dur="8s" begin="0s" repeatCount="indefinite"/>
   </rect>
-  <text x="810.0" y="97" text-anchor="middle" class="mono label" font-size="13">RESPONSE</text>
-  <text x="810.0" y="115" text-anchor="middle" class="mono dim" font-size="11">reliable output</text>
+  <text x="810.0" y="109.0" text-anchor="middle" class="mono label" font-size="13">REPLY</text>
+  <text x="810.0" y="127.0" text-anchor="middle" class="mono dim" font-size="11">WhatsApp</text>
 
-  <!-- agent <-> tools loop -->
-  <path id="loop" d="M 356.0,128 V 176 M 400.0,176 V 128" fill="none" stroke="#30363d" stroke-width="1.5" stroke-dasharray="3 4"/>
-  <path id="loopDown" d="M 356.0,128 V 176" fill="none"/>
-  <path id="loopUp" d="M 400.0,176 V 128" fill="none"/>
-  <circle r="3" fill="#79c0ff"><animateMotion dur="1.4s" repeatCount="indefinite"><mpath href="#loopDown"/></animateMotion></circle>
-  <circle r="3" fill="#5ee6b0"><animateMotion dur="1.4s" begin="-0.7s" repeatCount="indefinite"><mpath href="#loopUp"/></animateMotion></circle>
-  <rect x="318" y="176" width="120" height="46" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="378.0" y="196" text-anchor="middle" class="mono label" font-size="13">TOOLS</text>
-  <text x="378.0" y="212" text-anchor="middle" class="mono dim" font-size="11">APIs · DB · code</text>
+  <!-- offline: the same pipeline, scored before release -->
+  <text x="30" y="176" class="mono dim" font-size="12"># release gate · evaluated per component, then end-to-end, with an LLM judge</text>
+  <line x1="30" y1="216.0" x2="870" y2="216.0" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4 5">
+    <animate attributeName="stroke-dashoffset" values="18;0" dur="1.2s" repeatCount="indefinite"/>
+  </line>
+  <circle r="4" fill="#5ee6b0">
+    <animateMotion dur="8s" begin="-4.0s" repeatCount="indefinite"><mpath href="#gateFlow"/></animateMotion>
+  </circle>
+  <rect x="30" y="190" width="156" height="52" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="30" y="190" width="156" height="52" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.033;0.093;0.153;1" dur="8s" begin="-4.0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="108.0" y="213.0" text-anchor="middle" class="mono label" font-size="13">COMPONENT</text>
+  <text x="108.0" y="231.0" text-anchor="middle" class="mono dim" font-size="11">retriever · generator</text>
+  <path d="M 194.0,211.0 L 202.0,216.0 L 194.0,221.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="210" y="190" width="156" height="52" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="210" y="190" width="156" height="52" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.247;0.307;0.367;1" dur="8s" begin="-4.0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="288.0" y="213.0" text-anchor="middle" class="mono label" font-size="13">END-TO-END</text>
+  <text x="288.0" y="231.0" text-anchor="middle" class="mono dim" font-size="11">RAG triad · GEval</text>
+  <path d="M 374.0,211.0 L 382.0,216.0 L 374.0,221.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="390" y="190" width="192" height="52" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="390" y="190" width="192" height="52" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.483;0.543;0.603;1" dur="8s" begin="-4.0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="486.0" y="213.0" text-anchor="middle" class="mono label" font-size="13">SAFETY + OPS</text>
+  <text x="486.0" y="231.0" text-anchor="middle" class="mono dim" font-size="11">leakage · PII · p95 · cost</text>
+  <path d="M 590.0,211.0 L 598.0,216.0 L 590.0,221.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="606" y="190" width="120" height="52" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="606" y="190" width="120" height="52" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.697;0.757;0.817;1" dur="8s" begin="-4.0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="666.0" y="213.0" text-anchor="middle" class="mono label" font-size="13">COMPARE</text>
+  <text x="666.0" y="231.0" text-anchor="middle" class="mono dim" font-size="11">vs baseline</text>
+  <path d="M 734.0,211.0 L 742.0,216.0 L 734.0,221.0" fill="none" stroke="#6e7681" stroke-width="1.5"/>
+  <rect x="750" y="190" width="120" height="52" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1"/>
+  <rect x="750" y="190" width="120" height="52" rx="8" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.869;0.929;0.989;1" dur="8s" begin="-4.0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="810.0" y="213.0" text-anchor="middle" class="mono" fill="#3fb950" font-weight="700" font-size="13">PASS</text>
+  <text x="810.0" y="231.0" text-anchor="middle" class="mono dim" font-size="11">gate → ship</text>
 
-  <!-- agent loop -->
-  <text x="30" y="186" class="mono dim" font-size="12">while not done:</text>
-  <text x="30" y="204" class="mono val" font-size="12">    think → act → observe</text>
-  <text x="30" y="232" class="mono dim" font-size="12"># ship only what passes eval</text>
-
-  <!-- streaming logs -->
-  <text x="474" y="186" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[retriever]</tspan><tspan fill="#c9d1d9"> chunks ranked · context assembled</tspan>
-    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.107;0.147;0.95;1" dur="7s" repeatCount="indefinite"/>
+  <!-- eval log, one line at a time -->
+  <text x="30" y="272" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[retriever]</tspan><tspan fill="#c9d1d9"> contextual recall · precision   ≥ 0.7</tspan>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.000;0.001;0.030;0.170;0.200;1.000" dur="12.0s" repeatCount="indefinite"/>
   </text>
-  <text x="474" y="205" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[agent]    </tspan><tspan fill="#c9d1d9"> plan → tool_call → observe</tspan>
-    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.286;0.326;0.95;1" dur="7s" repeatCount="indefinite"/>
+  <text x="30" y="272" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[generator]</tspan><tspan fill="#c9d1d9"> faithfulness · answer relevancy ≥ 0.7</tspan>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.000;0.200;0.230;0.370;0.400;1.000" dur="12.0s" repeatCount="indefinite"/>
   </text>
-  <text x="474" y="224" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[eval]     </tspan><tspan fill="#c9d1d9"> faithfulness ✓  relevancy ✓</tspan>
-    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.464;0.504;0.95;1" dur="7s" repeatCount="indefinite"/>
+  <text x="30" y="272" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[judge]    </tspan><tspan fill="#c9d1d9"> GEval: correctness · completeness · style</tspan>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.000;0.400;0.430;0.570;0.600;1.000" dur="12.0s" repeatCount="indefinite"/>
   </text>
-  <text x="474" y="243" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[guard]    </tspan><tspan fill="#c9d1d9"> prompt-injection scan · clean</tspan>
-    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.643;0.683;0.95;1" dur="7s" repeatCount="indefinite"/>
+  <text x="30" y="272" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[safety]   </tspan><tspan fill="#c9d1d9"> scope · leakage · PII · toxicity → hard gate</tspan>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.000;0.600;0.630;0.770;0.800;1.000" dur="12.0s" repeatCount="indefinite"/>
+  </text>
+  <text x="30" y="272" class="mono" font-size="12" opacity="0" xml:space="preserve"><tspan fill="#5ee6b0">[ops]      </tspan><tspan fill="#c9d1d9"> p95 ≤ 5s · cost ≤ $0.0015 / query</tspan>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.000;0.800;0.830;0.970;0.999;1.000" dur="12.0s" repeatCount="indefinite"/>
   </text>
 </svg>

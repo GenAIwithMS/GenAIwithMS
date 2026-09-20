@@ -25,7 +25,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/genaiwithms/genaiwithms/master/assets/pipeline-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/genaiwithms/genaiwithms/master/assets/pipeline-light.svg">
-  <img src="https://raw.githubusercontent.com/genaiwithms/genaiwithms/master/assets/pipeline-dark.svg" alt="Agent pipeline: query → retrieve → agent ⇄ tools → evaluate → guard → response">
+  <img src="https://raw.githubusercontent.com/genaiwithms/genaiwithms/master/assets/pipeline-dark.svg" alt="Runtime RAG pipeline (webhook → condense → retrieve → rerank → generate → reply) and the release gate: component-level, end-to-end, safety and ops evals compared against a baseline">
 </picture>
 
 </div>
@@ -35,16 +35,16 @@
 <table>
   <tr>
     <td width="33%" valign="top">
-      <h3 align="center">🤖 AI Agents</h3>
-      <p align="center">Stateful, tool-using agents that plan, act and observe orchestrated as graphs, not prompt spaghetti.</p>
+      <h3 align="center">📚 RAG that earns its context</h3>
+      <p align="center">Structure aware chunking, embeddings matched to the domain, and a wide vector search narrowed by a reranker. Follow up questions are rewritten with conversation memory, and answers stay grounded or abstain instead of guessing.</p>
     </td>
     <td width="33%" valign="top">
-      <h3 align="center">📚 RAG</h3>
-      <p align="center">Retrieval pipelines that ground every answer in the right context, so models cite instead of guess.</p>
+      <h3 align="center">🤖 Agents that ship to production</h3>
+      <p align="center">Stateful, tool using agents orchestrated as graphs and connected to real systems through MCP servers, APIs and databases. Served with FastAPI behind signed webhooks, with memory, retries and background work, on whatever channel the users already live in.</p>
     </td>
     <td width="33%" valign="top">
-      <h3 align="center">🛡️ Evaluation &amp; Security</h3>
-      <p align="center">Measured before shipped, automated evals for quality, guardrails against prompt injection and unsafe output.</p>
+      <h3 align="center">🛡️ Evaluation as a release gate</h3>
+      <p align="center">Every stage of a RAG pipeline or agent is scored in isolation with DeepEval, then end to end with LLM as a judge rubrics. Regressions fail the release. In production, LangSmith scores live traces continuously and alerts on any metric drop.</p>
     </td>
   </tr>
 </table>
